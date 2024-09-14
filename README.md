@@ -29,6 +29,25 @@ this project focuses on organizing and managing a knowledge base with features f
 
 4. access the visual interface at `http://127.0.0.1:5000/canvas.html?topic=your_topic`
 
+## visual interface
+
+the project includes an interactive visual interface for exploring topics. here are some examples:
+
+### data structures and algorithms
+![Data Structures and Algorithms Graph](assets/image1.webp)
+
+this graph shows the relationships between various data structures and algorithms topics.
+
+### react concepts
+![React Concepts Graph](assets/image2.png)
+
+this graph illustrates key concepts in React and how they relate to each other.
+
+### topic exploration
+![Topic Exploration Interface](assets/image3.png)
+
+users can explore specific topics in detail through an interactive interface.
+
 ## maintaining the knowledge base
 
 to keep the knowledge base up-to-date, run the following scripts in order:
@@ -58,8 +77,4 @@ to keep the knowledge base up-to-date, run the following scripts in order:
 
 ## contributing
 
-contributions are welcome! please feel free to submit a pull request or open an issue for any bugs or feature requests.
-
-## license
-
-this project is open-source and available under the mit license.
+contributions are welcome! please fee
