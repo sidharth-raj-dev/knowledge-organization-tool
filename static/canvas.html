@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Knowledge Graph</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script> -->
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+    <script src="static/marked.min.js"></script>
+    <script src="static/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+    <button id="toggle-sidebar">Toggle Sidebar</button>
+
+    <div id="sidebar" class="sidebar">
+        <h2>linked topics</h2>
+        <ul id="tag-list"></ul>
+    </div>
+
+    <div id="graphContainer">
+        <svg id="graphCanvas"></svg>
+    </div>
+
+    <div id="article-panel" class="overlay-panel">
+        <button id="close-article-btn" class="close-btn">close</button>
+        <div id="articles-section">
+            <div id="article-list"></div>
+            <div id="article-content"></div>
+        </div>
+    </div>
+
+    <div id="chat-panel">
+        <button id="close-btn">close</button>
+        <div id="chat">
+            <div id="chat-output"></div>
+            <div id="chat-input">
+                <input type="text" id="message" placeholder="Type a message...">
+                <button id="send-button" onclick="sendMessage()">send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/sidebar.js"></script>
+    <script src="static/chat.js"></script>
+    <script src="static/canvas.js"></script>
+</body>
+
+</html>

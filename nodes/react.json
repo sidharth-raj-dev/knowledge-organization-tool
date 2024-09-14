@@ -1,0 +1,106 @@
+{
+    "nodes": [
+        {
+            "id": "Functional Components",
+            "group": 1
+        },
+        {
+            "id": "Rendering",
+            "group": 1
+        },
+        {
+            "id": "useState",
+            "group": 2,
+            "parentId": "Functional Components"
+        },
+        {
+            "id": "useEffect",
+            "group": 2,
+            "parentId": "Functional Components"
+        },
+        {
+            "id": "Virtual DOM",
+            "group": 2,
+            "parentId": "Rendering"
+        },
+        {
+            "id": "Reconciliation",
+            "group": 2,
+            "parentId": "Rendering"
+        },
+        {
+            "id": "Hooks",
+            "group": 1
+        },
+        {
+            "id": "State Management",
+            "group": 2,
+            "parentId": "Hooks"
+        },
+        {
+            "id": "Props",
+            "group": 2,
+            "parentId": "Functional Components"
+        },
+        {
+            "id": "Event Handling",
+            "group": 2,
+            "parentId": "Functional Components"
+        },
+        {
+            "id": "Side Effects",
+            "group": 2,
+            "parentId": "Hooks"
+        }
+    ],
+    "links": [
+        {
+            "source": "Functional Components",
+            "target": "Rendering"
+        },
+        {
+            "source": "Functional Components",
+            "target": "useState"
+        },
+        {
+            "source": "Functional Components",
+            "target": "useEffect"
+        },
+        {
+            "source": "Rendering",
+            "target": "Virtual DOM"
+        },
+        {
+            "source": "Rendering",
+            "target": "Reconciliation"
+        },
+        {
+            "source": "Hooks",
+            "target": "Functional Components"
+        },
+        {
+            "source": "Hooks",
+            "target": "State Management"
+        },
+        {
+            "source": "Hooks",
+            "target": "Side Effects"
+        },
+        {
+            "source": "State Management",
+            "target": "useState"
+        },
+        {
+            "source": "Side Effects",
+            "target": "useEffect"
+        },
+        {
+            "source": "Props",
+            "target": "Functional Components"
+        },
+        {
+            "source": "Event Handling",
+            "target": "Functional Components"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+look at this json file.
+add more nodes in this as below.
+
+nodes:
+    Routers (1)
+    React Router (1)
+    BrowserRouter (1)
+    Routes (1)
+    Route (1)
+    Link (1)
+                   
+json file:
+{
+    "nodes": [
+        {
+            "id": "Functional Components",
+            "group": 1
+        },
+        {
+            "id": "Rendering",
+            "group": 1
+        },
+        {
+            "id": "useState",
+            "group": 2,
+            "parentId": "Functional Components"
+        },
+        {
+            "id": "useEffect",
+            "group": 2,
+            "parentId": "Functional Components"
+        },
+        {
+            "id": "Virtual DOM",
+            "group": 2,
+            "parentId": "Rendering"
+        },
+        {
+            "id": "Reconciliation",
+            "group": 2,
+            "parentId": "Rendering"
+        }
+    ],
+    "links": [
+        {
+            "source": "Functional Components",
+            "target": "Rendering"
+        },
+        {
+            "source": "Functional Components",
+            "target": "useState"
+        },
+        {
+            "source": "Functional Components",
+            "target": "useEffect"
+        },
+        {
+            "source": "Rendering",
+            "target": "Virtual DOM"
+        },
+        {
+            "source": "Rendering",
+            "target": "Reconciliation"
+        }
+    ]
+}

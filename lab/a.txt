@@ -1,0 +1,13 @@
+make interesting nodes for 1920X1080 screen.
+the nodes acts as conversation starters.
+
+topic:
+spring boot
+
+example:
+const nodes = [
+            { x: 100, y: 100, label: 'Arrays' },
+            { x: 300, y: 100, label: 'Recursion with Arrays Basic Concepts' },
+            { x: 200, y: 250, label: 'Array Traversal' },
+            { x: 400, y: 250, label: 'Divide and Conquer' },
+        ];

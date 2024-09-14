@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select a topic</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .topic-item {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .topic-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>select a topic</h1>
+    <div class="topic-list" id="topicList">
+        <!-- Topics will be dynamically added here -->
+    </div>
+
+    <script>
+        // Fetch and display high-level topics
+        fetch('/api/topics')
+            .then(response => response.json())
+            .then(topics => {
+                const topicList = document.getElementById('topicList');
+                topics.forEach(topic => {
+                    const topicElement = document.createElement('div');
+                    topicElement.className = 'topic-item';
+                    topicElement.textContent = topic;
+                    topicElement.addEventListener('click', () => {
+                        window.location.href = `/canvas.html?topic=${encodeURIComponent(topic)}`;
+                    });
+                    topicList.appendChild(topicElement);
+                });
+            });
+    </script>
+</body>
+
+</html>

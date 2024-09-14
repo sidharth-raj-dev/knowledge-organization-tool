@@ -1,0 +1,38 @@
+1. at the end of your response you must give a json containing
+	- tags from below topics
+	- short heading
+	- summary of text in 1-3 lines
+2. this will be later used for backlinking.
+3. you may include new tags which might not be in the list.
+4. the tags will be sorted by relevancy from most relevant to least.
+
+format:
+```json
+{
+    "tags": [],
+	"heading": "",
+	"summary": ""
+}
+```
+
+example topics:
+Functional Components
+	Stateless Components
+	Props
+	Lifecycle Methods (using Hooks)
+	Pure Components
+Rendering
+	Virtual DOM
+	Reconciliation
+	Conditional Rendering
+	Lists and Keys
+Hooks
+	useState
+	useEffect
+	Custom Hooks
+	useContext
+Routers
+	React Router
+	Route Parameters
+	Nested Routes
+	Redirects

@@ -1,0 +1,6 @@
+Summary for react:
+
+- React is a JavaScript library for building user interfaces (UIs). It's known for its component-based architecture, efficient virtual DOM, and wide use in web, mobile, and desktop app development.
+
+
+Progress: 1 articles covered in this topic.
