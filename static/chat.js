@@ -2,6 +2,17 @@ const chatOutput = document.getElementById('chat-output');
 const sidePanel = document.getElementById('sidePanel');
 const closeButton = document.getElementById('close-btn');
 
+const tokenUsageDisplay = document.createElement('div');
+tokenUsageDisplay.id = 'token-usage-display';
+tokenUsageDisplay.style.position = 'fixed';
+tokenUsageDisplay.style.bottom = '10px';
+tokenUsageDisplay.style.right = '10px';
+tokenUsageDisplay.style.background = 'rgba(0, 0, 0, 0.7)';
+tokenUsageDisplay.style.color = 'white';
+tokenUsageDisplay.style.padding = '5px 10px';
+tokenUsageDisplay.style.borderRadius = '5px';
+document.body.appendChild(tokenUsageDisplay);
+
 function sendMessage() {
     const messageInput = document.querySelector('#chat-input input');
     if (!messageInput) {
@@ -51,6 +62,8 @@ function sendMessage() {
                         } else if (data.end) {
                             console.log('End of stream');
                             processFullResponse(fullResponse);
+                        } else if (data.token_usage) {
+                            displayTokenUsage(data.token_usage);
                         }
                     }
                 });
@@ -90,6 +103,20 @@ function processFullResponse(fullResponse) {
     if (lastMessage && lastMessage.dataset.role === 'assistant') {
         lastMessage.innerHTML = marked.parse(fullResponse);
     }
+}
+
+// function displayTokenUsage(tokenUsage) {
+//     const usageElement = document.createElement('div');
+//     usageElement.classList.add('token-usage');
+//     usageElement.textContent = `Token usage: ${tokenUsage}`;
+//     chatOutput.appendChild(usageElement);
+//     chatOutput.scrollTop = chatOutput.scrollHeight;
+// }
+
+
+function displayTokenUsage(tokenUsage) {
+    tokenUsageDisplay.textContent = `Token usage: ${tokenUsage}`;
+    console.log(`Token usage: ${tokenUsage}`);  // Add this line
 }
 
 document.addEventListener('DOMContentLoaded', function () {

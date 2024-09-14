@@ -1,0 +1,14 @@
+[
+    {
+        "role": "user",
+        "parts": [
+            "what are functioal components?"
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            "Functional components are the heart and soul of modern React development.  They're essentially JavaScript functions that return JSX, the syntax that lets you write HTML-like structures within your code.  Think of them as super-efficient building blocks for creating reusable UI components.\n\n**Here's the breakdown:**\n\n- **Simplicity:** They are much simpler to write and understand than class-based components. No need for `this` keywords or complex lifecycle methods.\n- **Pure Functions:** They aim to be pure functions, meaning they always return the same output for the same input, making them predictable and easier to reason about.\n- **Composability:** They can be easily combined and nested to create complex UIs.\n\nLet me give you an example:\n\n```javascript\nfunction Welcome(props) {\n  return <h1>Hello, {props.name}!</h1>;\n}\n```\n\nThis simple functional component takes a `name` prop and renders a greeting. \n\nNow, how about we talk about how to add state and handle events within functional components using hooks?  Ready to dive into those? \n\n```json\n{\n    \"state\": {\n        \"name\": \"IS\",\n        \"next_topic\": null\n    },\n    \"isArticle\": {\n\t\t\"value\": false,\t\n\t\t\"heading\": null,\n\t\t\"summary\": null,\n\t\t\"tags\": []\n\t}\n}\n```\n"
+        ]
+    }
+]

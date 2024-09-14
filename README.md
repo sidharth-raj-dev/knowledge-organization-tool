@@ -1,51 +1,65 @@
-pip install python-dotenv
-pip install google-generativeai
-pip install flask
+# knowledge base organization
 
-todo:
+this project focuses on organizing and managing a knowledge base with features for document categorization, topic extraction, and interactive exploration through a visual knowledge graph.
 
-auto categorization [done]
-voice support
-response streaming [done]
-past chats
-kg update (imp) [done]
-summary (imp) [done]
+## features
 
-dev:
+- **auto categorization**: automatically categorize new documents and topics
+- **knowledge graph**: visualize relationships between topics
+- **topic-based exploration**: dive into specific topics through an interactive interface
+- **summarization**: generate concise summaries of documents and topics
+- **tag extraction**: identify and extract relevant tags from documents
 
-adding a topic
-    1. make {topic}.json file
-    2. make {topic}.txt file
+## setup and usage
 
-maintainance
-    1. run extract_tags
-    2. run summarize
-    3. run compile_summary
-    4. run update_knowledge_graph
+1. install required dependencies:
+   ```
+   pip install python-dotenv google-generativeai flask tiktoken
+   ```
 
-concerns:
+2. set up your environment variables in a `.env` file:
+   ```
+   api_key=your_generative_ai_api_key_here
+   ```
 
-user will spend more time stuyding materials from other apps
-user will find hard to talk to it in a free way
-user will find this boring after some time
-    how to ease ai interaction
-user will not be able to upload large documents and projects in it
-    or the actual ingestion will be complicated for user
-after talking a lot the quality of articles will become low,
-    hence everything from knowledge graph and summary quality will be low
-this will not be helpful in data structures and algorithms and other fields
+3. run the main application:
+   ```
+   python app.py
+   ```
 
-note
+4. access the visual interface at `http://127.0.0.1:5000/canvas.html?topic=your_topic`
 
-only 5 relevant tags are processed in articles route and in sidebar.
-tags.json is like history. even if any nodes gets deleted, it doesnt affect history.
-below scripts will not be affected.
-    run extract_tags
-    run summarize
-    run compile_summary
+## maintaining the knowledge base
 
-features
+to keep the knowledge base up-to-date, run the following scripts in order:
 
-document organization
-knowledge graph
-summary
+1. `python extract_tags.py`
+2. `python summarize.py`
+3. `python compile_summary.py`
+4. `python update_knowledge_graph.py`
+
+## adding new topics
+
+1. create a new `{topic}.json` file in the `nodes/` directory
+2. create a corresponding `{topic}.txt` file in the `topics/` directory
+
+## notes and limitations
+
+- currently supports up to 5 relevant tags for articles in the sidebar
+- `tags.json` serves as a history and is not affected by node deletions
+- large documents and projects may require additional processing
+
+## todo
+
+- [ ] implement voice support for more interactive exploration
+- [ ] add functionality for retrieving past conversations
+- [x] implement auto-categorization of topics
+- [x] add response streaming for faster interactions
+
+## contributing
+
+contributions are welcome! please feel free to submit a pull request or open an issue for any bugs or feature requests.
+
+## license
+
+this project is open-source and available under the mit license.

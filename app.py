@@ -222,8 +222,8 @@ def process_message():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/api/articles', methods=['GET'])
-def get_articles():
+# @app.route('/api/articles', methods=['GET'])
+# def get_articles():
     encoded_tag = request.args.get('tag')
     if not encoded_tag:
         return jsonify({"error": "Tag parameter is required"}), 400
