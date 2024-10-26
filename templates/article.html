@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Article</title>
+    <!-- Add Marked.js -->
+    <script src="{{ url_for('static', filename='js/marked.min.js') }}"></script>
+    <!-- Add PrismJS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Mono', 'Inter', Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+
+        pre[class*="language-"] {
+            border-radius: 6px;
+            margin: 1.5em 0;
+        }
+
+        code[class*="language-"] {
+            font-size: 0.9em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #2c3e50;
+            margin-top: 2em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 6px 12px;
+            margin: 8px;
+            background: #4a5568;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .code-wrapper {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script>
+        // Configure marked to use PrismJS for syntax highlighting
+        marked.setOptions({
+            highlight: function (code, lang) {
+                if (Prism.languages[lang]) {
+                    return Prism.highlight(code, Prism.languages[lang], lang);
+                }
+                return code;
+            }
+        });
+
+        // Convert markdown to HTML
+        const markdown = {{ content| tojson }};
+        const contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = marked.parse(markdown);
+
+        // Add copy buttons to code blocks
+        document.querySelectorAll('pre').forEach(block => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'code-wrapper';
+
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copy';
+
+            block.parentNode.insertBefore(wrapper, block);
+            wrapper.appendChild(block);
+            wrapper.appendChild(button);
+
+            button.addEventListener('click', async () => {
+                const code = block.textContent;
+                await navigator.clipboard.writeText(code);
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        });
+    </script>
+    <p><a href="{{ url_for('index') }}">Back to articles</a></p>
+</body>
+
+</html>
