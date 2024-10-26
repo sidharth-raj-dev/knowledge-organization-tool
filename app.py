@@ -1,21 +1,44 @@
 from flask import Flask, render_template, abort
 import os
+import json
 
 app = Flask(__name__)
 
+def load_articles_metadata():
+    try:
+        with open('articles_meta.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
 @app.route('/')
 def index():
-    # List all markdown files in articles directory
+    # Load metadata
+    articles_meta = load_articles_metadata()
+    
+    # Get list of available markdown files
     articles = []
     for filename in os.listdir('articles'):
         if filename.endswith('.md'):
-            articles.append(filename[:-3])  # Remove .md extension
+            article_id = filename[:-3]  # Remove .md extension
+            # Get metadata if available, otherwise use filename as title
+            article_data = articles_meta.get(article_id, {
+                'title': article_id,
+                'tags': [],
+                'description': '',
+                'date': ''
+            })
+            article_data['id'] = article_id  # Add the ID for linking
+            articles.append(article_data)
+    
+    # Sort by date (newest first) if date exists
+    articles.sort(key=lambda x: x.get('date', ''), reverse=True)
+    
     return render_template('base.html', articles=articles)
 
 @app.route('/article/<name>')
 def article(name):
     try:
-        # Read the markdown file
         with open(f'articles/{name}.md', 'r', encoding='utf-8') as file:
             content = file.read()
         return render_template('article.html', content=content)

@@ -1,0 +1,23 @@
+{
+    "palindrome-tutorial": {
+        "title": "Understanding the Longest Palindrome Problem: A Step-by-Step Guide",
+        "tags": [
+            "algorithms",
+            "python",
+            "strings"
+        ],
+        "thumbnail": "/static/images/palindrome.png",
+        "description": "A comprehensive guide to solving the longest palindrome problem with Python",
+        "date": "2024-02-15"
+    },
+    "streaming-response-implementation": {
+        "title": "Implementing Real-Time Response Streaming in a Flask and JavaScript Application",
+        "tags": [
+            "javascript",
+            "web"
+        ],
+        "thumbnail": "/static/images/response_streaming.png",
+        "description": "Guide to JavaScript basics",
+        "date": "2024-02-10"
+    }
+}
