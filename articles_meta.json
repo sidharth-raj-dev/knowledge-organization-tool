@@ -19,5 +19,38 @@
         "thumbnail": "/static/images/response_streaming.png",
         "description": "Guide to JavaScript basics",
         "date": "2024-02-10"
+    },
+    "aem-templates-guide": {
+        "title": "AEM Templates Guide",
+        "tags": [
+            "aem",
+            "cms",
+            "development"
+        ],
+        "thumbnail": "/static/images/placeholder.png",
+        "description": "A comprehensive guide to working with Adobe Experience Manager templates",
+        "date": "2024-11-30"
+    },
+    "git-branch-management": {
+        "title": "Git Branch Management Best Practices",
+        "tags": [
+            "git",
+            "version-control",
+            "development"
+        ],
+        "thumbnail": "/static/images/placeholder.png",
+        "description": "Learn effective strategies for managing Git branches in your projects",
+        "date": "2024-11-30"
+    },
+    "langgraph-article": {
+        "title": "Understanding LangGraph: A Guide to Language Model Orchestration",
+        "tags": [
+            "llm",
+            "ai",
+            "python"
+        ],
+        "thumbnail": "/static/images/placeholder.png",
+        "description": "Explore LangGraph for orchestrating language model workflows",
+        "date": "2024-11-30"
     }
 }
